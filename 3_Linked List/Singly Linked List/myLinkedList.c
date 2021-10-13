@@ -28,8 +28,9 @@ void insertAtStart(int data)
 
 void insertAtEnd(int data)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     temp->data = data;
     temp->next = NULL;
 
