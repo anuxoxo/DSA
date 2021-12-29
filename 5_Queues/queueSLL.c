@@ -5,6 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
+
 } * front, *rear;
 
 void enqueue(int val)
@@ -56,7 +57,7 @@ void traverse()
 {
     struct Node *temp = front;
     printf("\n\nElements: ");
-    while (temp != NULL)
+    while (temp != rear->next)
     {
         printf("\n%d", temp->data);
         temp = temp->next;
