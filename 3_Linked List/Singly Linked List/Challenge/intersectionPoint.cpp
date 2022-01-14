@@ -55,38 +55,27 @@ int length(Node *head)
     return l;
 }
 
-int intersectionPoint(Node *&head1, Node *&head2)
+int intersectionPoint(Node *head1, Node *head2)
 {
-    int m = length(head1), n = length(head2), d = 0;
-    Node *ptr1, *ptr2;
-
-    if (m > n)
+    int m = length(head1), n = length(head2);
+    while (m > n)
     {
-        d = m - n;
-        ptr1 = head1;
-        ptr2 = head2;
+        head1 = head1->next;
+        m--;
     }
-    else
+    while (n > m)
     {
-        d = n - m;
-        ptr1 = head2;
-        ptr2 = head1;
+        head2 = head2->next;
+        n--;
     }
 
-    while (d)
+    while (head1 != NULL && head2 != NULL)
     {
-        ptr1 = ptr1->next;
-        if (ptr1 == NULL)
-            return -1;
-        d--;
-    }
+        if (head1 == head2)
+            return head1->data;
 
-    while (ptr1 != NULL && ptr2 != NULL)
-    {
-        if (ptr1 == ptr2)
-            return ptr1->data;
-        ptr1 = ptr1->next;
-        ptr2 = ptr2->next;
+        head1 = head1->next;
+        head2 = head2->next;
     }
     return -1;
 }
@@ -105,7 +94,7 @@ void makeIntersect(Node *head1, Node *head2, int pos)
 
 int main()
 {
-    Node *head1 = NULL, *head2;
+    Node *head1 = NULL, *head2 = NULL;
     insertAtTail(head1, 1);
     insertAtTail(head1, 2);
     insertAtTail(head1, 3);
