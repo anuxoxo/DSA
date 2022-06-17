@@ -6,6 +6,13 @@
         "functional": "cpp",
         "type_traits": "cpp",
         "valarray": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "utility": "cpp",
+        "vector": "cpp"
     }
 }
