@@ -31,7 +31,7 @@ vector<vector<int>> matrixReshape(vector<vector<int>> &mat, int r, int c)
             }
         }
     }
-    return mat;
+    return newM;
 }
 
 int main()
